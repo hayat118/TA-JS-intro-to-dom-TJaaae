@@ -1,4 +1,4 @@
-{
+let allBooks={
   books: [
     {
       isbn: "9781593275846",
@@ -120,18 +120,31 @@
 
 
 
-let books=document.querySelector("books");
+// let books=document.querySelector("books");
 
-let ul=document.querySelector("ul");
-books.forEach((char)=>{
+// let rootElement=document.querySelector("ul");
+  let ul=document.querySelector("ul");
+
+// var store = ""
+allBooks.books.forEach((book)=>{
   let li=document.createElement("li");
   let img=document.createElement("img");
-  img.src=char.image_url;
+  img.src=book.image;
+  img.alt=book.title;
   let h2=document.createElement("h2");
-  h2.innerText=char.name;
+  h2.innerText=book.title;
   let p=document.createElement("p");
-  p.innerText=char.description
-  let a=document.createElement("a");
-  li.append(img,h2,p,a);
-  ul.append("li");
+  p.innerText="Author:";
+  let span=document.createElement("span");
+  let authorName=document.createTextNode(book.author);
+  span.append(authorName);
+  p.append(span)
+  let button=document.createElement("button")
+  button.innerText="Buy Now"
+  li.append(img,h2,p,button);
+  console.log(li);
+  // store = `${store} + ${li}`
+  ul.append(li);
 });
+
+
