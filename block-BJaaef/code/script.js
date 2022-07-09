@@ -1,5 +1,10 @@
 
 
+let allPeople=got.houses.reduce((acc,cv)=>{
+   acc=acc.concat(cv.people)
+   return acc;
+},[])
+
 
 
 
@@ -7,7 +12,7 @@
 
 let ul=document.querySelector("ul");
 
-got.houses.forEach((people)=>{
+allPeople.forEach((people)=>{
   let li=document.createElement("li");
   let img=document.createElement("img");
   img.src=people.image;
@@ -20,6 +25,6 @@ got.houses.forEach((people)=>{
   button.innerText="Learn More";
   li.append(img,h2,p,button);
   console.log(li);
-  // ul.append(li);
+  ul.append(li);
 
 })

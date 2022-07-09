@@ -14,8 +14,13 @@ body {
   border: 2px solid #d6bcfa;
   height: 500px;
   border-radius: 10px;
+  width: 30%;
 }
 h1,
 h2 {
   text-align: center;
+}
+img{
+  border-radius: 50%;
+
 }
